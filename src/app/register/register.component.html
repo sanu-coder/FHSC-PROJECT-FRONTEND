@@ -1,0 +1,51 @@
+<div>
+    <div class="login-bg">
+      <div class="login-box">
+        <h1 >Register</h1>
+        <nz-steps [nzCurrent]="current" nzType="navigation">
+          <nz-step nzTitle="Step - 1"></nz-step>
+          <nz-step nzTitle="Step - 2"></nz-step>
+          
+        </nz-steps>
+    
+        <div class="steps-content">
+          
+          <form>
+            <div class="user-box" *ngIf="current===0">
+              <input type="text" name="" required="">
+              <label>Username</label>
+            </div>
+            <div class="user-box" *ngIf="current===0">
+              <input type="email" name="" required="">
+              <label>Email</label>
+            </div>
+            <div class="user-box" *ngIf="current===1">
+              <input type="password" name="" required="">
+              <label>Password</label>
+            </div>
+            <div class="user-box" *ngIf="current===1">
+              <input type="password" name="" required="">
+              <label>Confirm Password</label>
+            </div>
+          </form>
+        </div>
+        <div class="steps-action">
+          <div>
+            <button  nzType="default" (click)="pre()" *ngIf="current > 0">
+              <span><i class="fas fa-chevron-left"></i></span>
+            </button>
+            <button  nzType="default" (click)="next()" *ngIf="current < 1">
+              <span><i class="fas fa-chevron-right"></i></span>
+            </button>
+          </div>
+          <div>
+            <button class="btn-register" *ngIf="current===1">
+              Register
+            </button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+</div>
+

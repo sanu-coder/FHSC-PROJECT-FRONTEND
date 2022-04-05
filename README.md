@@ -2,7 +2,7 @@
 
 Hello Learners !!
 
-This project is for google solution challenge to meet the goal no 4 i.e Quality Education.
+This project is for <a href="https://developers.google.com/community/gdsc-solution-challenge">Google Solution Challenge</a> to meet the goal no 4 i.e <b>Quality Education</b>.
 
 FHSC( food, hospitals and shopping centers) is an web application which tells about the places near your location. It's goal to help and increase the knowledge of the users to make their life more easier and comfortable.
 
@@ -74,14 +74,29 @@ It is divided into the three sections :
         
 ## Project view : 
 
-1. Home page
-    <img src="https://user-images.githubusercontent.com/72346984/161771861-cc1ec926-1ca5-4f76-b36d-f32a7acfc9b1.png"/>
-3. Listing of 3 components
-4. Food 
-5. Hospital 
-6. Shopping  
-7. Google Map Integration
+<b>1. Home page</b>
 
-## Further help
+<img src="https://user-images.githubusercontent.com/72346984/161771861-cc1ec926-1ca5-4f76-b36d-f32a7acfc9b1.png"/>
+    
+<b>2. Listing of 3 components</b>
+ 
+<img src="https://user-images.githubusercontent.com/72346984/161772504-20fef92b-36a7-48d6-b583-7e40e76041ce.png"/>
+    
+<b>3. Food </b>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<img src="https://user-images.githubusercontent.com/72346984/161772687-cb8b7204-d9b6-4df3-8d5f-3003844cf579.png"/>
+    
+<b>4. Hospital </b>
+    
+<img src="https://user-images.githubusercontent.com/72346984/161772617-ed488faa-1bbe-42f4-ba87-8a04b554c219.png"/>
+    
+<b>5. Shopping  </b>
+    
+<img src="https://user-images.githubusercontent.com/72346984/161772759-9a180659-7e3c-4ed5-b60d-ae5e7c5b8ac8.png"/>
+    
+<b>6. Google Map Integration</b>
+    
+<img src="https://user-images.githubusercontent.com/72346984/161772845-d0943571-1ab4-4cb5-bc12-851a264df592.png"/>
+
+
+

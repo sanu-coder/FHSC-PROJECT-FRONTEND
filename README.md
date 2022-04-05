@@ -71,6 +71,16 @@ It is divided into the three sections :
         c. Type of shopping centres(shops, malls, etc)
         d. Distance factor
         
+        
+## Project view : 
+
+1. Home page
+    <img src="https://user-images.githubusercontent.com/72346984/161771861-cc1ec926-1ca5-4f76-b36d-f32a7acfc9b1.png"/>
+3. Listing of 3 components
+4. Food 
+5. Hospital 
+6. Shopping  
+7. Google Map Integration
 
 ## Further help
 

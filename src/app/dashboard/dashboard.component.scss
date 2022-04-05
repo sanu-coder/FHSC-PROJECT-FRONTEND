@@ -1,0 +1,32 @@
+.container1{
+    
+}
+.heading{
+   text-align: center;
+   margin-top: 70px;
+   font-size: xx-large;
+   margin-bottom: 100px;
+   font-family: 'Inconsolata', monospace;
+   font-weight: bolder;
+}
+.card {
+    background-color: #FFF;
+    box-shadow: 0 5px 18px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.1s ease-out, transform 0.1s ease-out;
+    height: 400px;
+    &--up:hover {
+      transform: translateY(-10px); 
+    //   transform: scale(1.02); 
+      box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.2);
+    }
+      
+    &--up:active { 
+      box-shadow: 0 3px 13px 3px rgba(0, 0, 0, 0.25);
+    }
+    .card-heading{
+        font-size: 28px;
+        margin-top: 20px;
+        font-family: 'Inconsolata', monospace;
+        font-weight: 600;
+    }
+}

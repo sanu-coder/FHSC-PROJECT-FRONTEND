@@ -1,0 +1,384 @@
+.container1{
+  background-color: white;
+}
+
+.navigation-bar{
+  .navbar{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    font-size: 18px;
+    height: 70px;
+    position: fixed;
+    z-index: +3;
+    width: 100%;
+    // background-color: black;
+    background-color: rgb(0, 0, 0);
+    .logo{
+      width: 20%;
+      color: white;
+      position: relative;
+      top: 50%;
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+    .nav-items{
+      width: 60%;
+      list-style: none;
+      font-size: 20px;
+      // color: blanchedalmond;
+      color: white;
+      // font-weight: 500;
+      display: flex;
+      justify-content: space-evenly;
+      height: 100%;
+      .item{
+        height:100%;
+        width: 100%;
+      }
+    
+      .item li::after,
+      .item li::before{
+        content: "";
+        position: absolute;
+        display: block;
+        border: 0px solid transparent;
+        width: 0%;
+        height: 0%;
+        transition: all 0.5s ease;
+      }
+      .item li::after{
+        width: 0%;
+        height: 0%;
+        top: 0;
+        left: 0;
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+      }
+      .item li::before{
+        width: 0%;
+        height: 0%;
+        right: 0;
+        bottom: 0;
+        border-bottom: 2px solid transparent;
+        border-right: 2px solid transparent;
+      }
+      .item li:hover::after{
+        width: 100%;
+        height: 100%;
+        border-color: #fff;
+      }
+      .item li:hover::before{
+        width: 100%;
+        height: 100%;
+        border-color: #fff;
+      }
+      li{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        position: relative;
+        top: 30%;
+        cursor: pointer;
+        width: 80%;
+        // line-height: 70px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.image-animation{
+  padding: 0;
+  margin: 0;
+  .frame {
+    height: 400px;
+    width: 100%;
+    background-color: #eee;
+    
+    background-position: center;
+    background-size: cover;
+    -webkit-animation: image 5s infinite; /* Safari 4+ */
+    -moz-animation   : image 5s infinite; /* Fx 5+ */
+    -o-animation:      image 5s infinite; /* Opera 12+ */
+    animation:         image 5s infinite; /* IE 10+, Fx 29+ */
+  }
+  
+  @keyframes image {
+    0%{
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIqzPnxNt51e9nRPs97qAplWFBmFcNGvqZsg&usqp=CAU");
+    }
+    25% {
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIa7Hghwr_3y1fHcUnR7RVkS2M3YWTFzBuGQ&usqp=CAU");
+    }
+    50% {
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQycsisuXNKyAfDHQc3W7Qiwfp78epJ3ggfww&usqp=CAU");
+    }
+    
+    75%{
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4AQtxddMe7Pgz31LFlPUsxdzJj-jTNoKBfQ&usqp=CAU");
+    }
+    100%{
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4AQtxddMe7Pgz31LFlPUsxdzJj-jTNoKBfQ&usqp=CAU");
+    }
+  }
+}
+
+.filter{
+  margin-bottom: 40px;
+
+  .filter-items{
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    background-color: #ffffff;
+
+  }
+  .filter-box{
+    // border-top : 0.1px solid #0c090e;
+    // border-bottom : 0.1px solid #0c090e;
+    // border-right : 0.1px solid #0c090e;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    
+    font-size: 17px;
+    text-align: center; 
+    float: left;
+    transition: all 0.5s ease;
+    p{
+      margin: auto;
+    } 
+    .dropdown-content {
+      margin-top: 15px;
+      display: none;
+      position: relative;
+      background-color: #f9f9f9;
+      width: 100%;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 5px 6px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+  }
+  
+ 
+  // .filter-box:nth-child(1){
+  //   cursor: default;
+  //   background-color: white;
+  // }
+
+}
+.hospitals{
+  // height: 270px;
+  margin: auto auto 20px auto;
+  width: 80%;
+  padding-top:10px;
+  // padding-right:10px;
+  padding-bottom: 15px;
+  border: 0.2px solid black;
+  transition: all 0.5s ease;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  // cursor: pointer;
+  .side-icons{
+    display: none;
+    button{
+      border: 1px solid black;
+      outline: none;
+      height: 50px;
+      font-size: 18px;
+      width: 50px;
+      margin-bottom: 7px;
+      border-radius: 100%;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      transition: all 0.5s ease;
+      display: block;
+    }
+    button:hover{
+      color: white;
+      background-color: black;
+    }
+  }
+  .row{
+    img{
+      position: relative;
+      top: 6px;
+      left: 10px;
+      margin: auto;
+      height: 250px;
+      width: 95%;
+    }
+    .hospital-details{
+      padding: 20px;
+      .hospital-heading{
+        font-size: 28px;
+      }
+      .hospital-info{
+        font-size: 18px;
+        i{
+          margin-right: 14px;
+        }
+      }
+      p{
+        padding: 0;
+        margin-bottom: 5px;
+      }
+      
+    }
+    
+  }
+  
+}
+.hospitals:hover{
+  transform: scale(1.03);
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  .side-icons{
+    display: block;
+  }
+}
+.dropdown{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+
+
+.btn-register{
+  font-size: 18px;
+  height: 50px;
+  width: 200px;
+  border-radius: 30px;
+  border: 1px solid black;
+  color: black;
+}
+.btn-register:hover{
+  
+  font-weight: 400;
+  color: white;
+  font-size: 20px;
+  background-color: black;
+  border: 0.2px solid black;
+  animation: colorAnimation 1s ease-in-out;
+}
+@keyframes colorAnimation {
+  25% {
+    transform: rotate(7deg) translate(5px);
+  }
+  50% {
+    transform: rotate(-7deg) translate(-5px);
+  }
+  60% {
+    transform: rotate(6deg) translate(4px);
+  }
+  70% {
+    transform: rotate(-5deg) translate(-3px);
+  }
+  80% {
+    transform: rotate(4deg) translate(2px);
+  }
+  90% {
+    transform: rotate(-2deg) translate(-1px);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+
+span {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+/* for browsers that support spread, added in
+https://drafts.csswg.org/css-text-decor-4/#text-shadow-property
+currently: none browsers! none of them!
+I can't even find a test: 
+https://wpt.fyi/results/css/css-text-decor */
+// @supports ( text-shadow: 1px 1px 1px 1px black ) {
+//   span {
+//     text-shadow:
+      
+//       var(--x-offset)
+//       var(--y-offset)
+//       0px
+//       0px
+//       var(--background-color), 
+      
+//       var(--x-offset) 
+//       var(--y-offset)
+//       var(--stroke)
+//       0px
+//       var(--stroke-color);
+    
+//   }
+// }
+
+// .glow-on-hover {
+//   width: 100%;
+//   height: 100%;
+//   background: #9f98e8;
+//   cursor: pointer;
+//   position: relative;
+//   z-index: 0;
+// }
+
+// .glow-on-hover:before {
+//   content: '';
+//   background: linear-gradient(45deg, #544a80, #29a2e7, #002bff, #7a00ff,  #8550a8);
+//   position: absolute;
+//   top: -2px;
+//   left:-2px;
+//   background-size: 400%;
+//   z-index: -1;
+//   filter: blur(5px);
+//   width: calc(100% + 4px);
+//   height: calc(100% + 4px);
+//   animation: glowing 20s linear infinite;
+//   opacity: 0;
+//   transition: opacity .3s ease-in-out;
+//   border-radius: 10px;
+// }
+
+// .glow-on-hover:active {
+//   color: #000
+// }
+
+// .glow-on-hover:active:after {
+//   background: transparent;
+// }
+
+// .glow-on-hover:hover:before {
+// transform: scale(1.02);
+//   opacity: 1;
+// }
+
+// .glow-on-hover:after {
+//   z-index: -1;
+//   content: '';
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   background: #9f98e8;
+//   left: 0;
+//   top: 0;
+//   // border-radius: 10px;
+// }
+
+// @keyframes glowing {
+//   0% { background-position: 0 0; }
+//   50% { background-position: 400% 0; }
+//   100% { background-position: 0 0; }
+// }

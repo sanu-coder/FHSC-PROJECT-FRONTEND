@@ -1,0 +1,169 @@
+<div class="container1">
+  
+  <section class="navigation-bar">
+    <div class="navbar">
+      <div class="logo" routerLink="/home">
+        <img src="assets/img/app-logo.png" style="height: 70px; width: 70px;" alt="">
+        <span>FHSC</span>
+        
+      </div>
+      <nav class="nav-items">
+        <div class="item" routerLink="/home">
+          <li>Home</li>
+        </div>
+        <div class="item" routerLink="/foods">
+          <li>Food</li>
+        </div>
+        <div class="item" routerLink="/hospitals">
+          <li>Hospitals</li>
+        </div>
+        <div class="item" routerLink="/shopping">
+          <li>Shopping</li>
+        </div>
+        <!-- <div class="item">
+          <li>Account</li>
+        </div> -->
+      </nav>
+    </div>
+  </section>
+  
+  <section class="image-animation">
+    <div class="frame"></div>
+  </section>
+  
+  <section class="filter">
+    <p style="font-size: 20px;margin-top: 5px; margin-bottom: 5px;margin-left: 5px;">Hospitals in Bilaspur Chhattisgarh</p>
+    <div class="filter-items">
+       <!-- [settings]="dropdownSettings" -->
+      <div class="filter-box">
+        <ng-multiselect-dropdown
+         class="dropdown"
+          name="ownership"
+          [placeholder]="'Ownership'"
+          [settings]="dropdownSettings"
+          [data]="ownership"
+          [(ngModel)]="selectedOwnwership"
+          (ngModelChange)="onSelect($event)"
+          (onDeSelect)="onSelect($event)"
+        >
+          <ng-template
+            #optionsTemplate
+            let-item
+            let-option="option"
+            let-id="id"
+            let-isSelected="isSelected"
+          >
+            <div style="padding: 1px 10px;">
+            
+            </div>
+          </ng-template>
+        </ng-multiselect-dropdown>
+        
+      </div>
+      <div class="filter-box">
+        <ng-multiselect-dropdown
+        class="dropdown"
+         name="specialists"
+         [placeholder]="'Select Specialists'"
+         [settings]="specialistDropdownSettings"
+         [data]="specialists"
+         [(ngModel)]="selectedSpecialist"
+         (ngModelChange)="onSelect($event)"
+       >
+         <ng-template
+           #optionsTemplate
+           let-item
+           let-option="option"
+           let-id="id"
+           let-isSelected="isSelected"
+         >
+           <div style="padding: 1px 10px;">
+           
+           </div>
+         </ng-template>
+       </ng-multiselect-dropdown>
+      </div>
+      
+      <div class="filter-box">
+        <ng-multiselect-dropdown
+        class="dropdown"
+         name="ratings"
+         [placeholder]="'Select Ratings'"
+         [settings]="dropdownSettings"
+         [data]="ratings"
+         [(ngModel)]="selectedRatings"
+         (ngModelChange)="onSelect($event)"
+       >
+         <ng-template
+           #optionsTemplate
+           let-item
+           let-option="option"
+           let-id="id"
+           let-isSelected="isSelected"
+         >
+           <div style="padding: 1px 10px;"></div>
+         </ng-template>
+       </ng-multiselect-dropdown>
+      </div>
+      <div class="filter-box">
+        <ng-multiselect-dropdown
+         class="dropdown"
+         name="distances"
+         [placeholder]="'Distance'"
+         [settings]="dropdownSettings"
+         [data]="distances"
+         [(ngModel)]="selectedDistances"
+         (ngModelChange)="onSelect($event)"
+         
+       >
+         <ng-template
+           #optionsTemplate
+           let-item
+           let-option="option"
+           let-id="id"
+           let-isSelected="isSelected"
+         >
+           <div style="padding: 1px 10px;">
+           
+           </div>
+         </ng-template>
+       </ng-multiselect-dropdown>
+      </div>
+    </div>
+  </section>
+ 
+  <section id="hospitals">
+    <div class="hospitals" *ngFor = "let hospital of new_hospitals">
+      <div class="row" >
+        <div class="col-sm-4">
+          <img [src]="hospital.mainimg" alt="">
+        </div>
+        <div class="col-sm-7">
+          <div  class="hospital-details">
+              <p class="hospital-heading">{{hospital.name}}</p>
+              <p class="hospital-info"><i class="fas fa-map-marked"></i>{{hospital.address}}</p>
+              <p class="hospital-info"><i class="fas fa-phone-volume"></i>{{hospital.number}}</p>
+              <p class="hospital-info"><i class="fas fa-chevron-right"></i>Available Now</p>
+              <p class="hospital-info"><i class="fas fa-clock"></i>{{hospital.open}} - {{hospital.close}}</p>
+              <p *ngIf="hospital.booking==''" class="hospital-info" style="color: red;"><i class="fas fa-frown"></i>Booking Not Available</p>
+              <div  *ngIf="hospital.booking!=''" style="float: right;">
+                <button *ngIf="hospital.booking!=''" (click)="onBooking(hospital.booking)" class="btn-register">Book Now</button>
+              </div>
+          </div>
+          
+        </div>
+        <div  class="col-sm-1 side-icons" >
+          <button *ngIf="hospital.website!=''" (click)="website(hospital.website)"  ><i class="fas fa-globe"></i></button>
+          <!-- <button><i class="far fa-heart"></i></button> -->
+          <!-- <button *ngIf="hospital.wishlist==false"><i class="far fa-heart"></i></button>
+          <button *ngIf="hospital.wishlist==true" > <i class="fas fa-heart"></i></button> -->
+          <button (click)="displayDetails(hospital)"><i class="fas fa-eye"></i></button>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+</div>
+  
+  
+

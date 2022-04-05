@@ -1,0 +1,92 @@
+<div class="container1">
+  <section class="navigation-bar">
+    <div class="navbar">
+      <div class="logo" routerLink="/home">
+        <div style="cursor: pointer;">
+            <img src="assets/img/app-logo.png" style="height: 70px; width: 70px;" alt="">
+            <span>FHSC</span>
+        </div>
+        
+        
+      </div>
+      <nav class="nav-items">
+        <div  class="item">
+          <li routerLink="/home">Home</li>
+         
+        </div>
+        <div class="item">
+          <li routerLink="/foods">Food</li>
+        </div>
+        <div class="item">
+          <li routerLink="/hospitals">Hospitals</li>
+        </div>
+        <div class="item">
+          <li routerLink="/shopping">Shopping</li>
+        </div>
+        <!-- <div class="item">
+          <li routerLink="/login">Login/Register</li>
+        </div> -->
+      </nav>
+    </div>
+  </section>
+  
+  <div class="container " style="margin: 10px;padding: 10px;">
+    <section id="places-and-map">
+      <p style="margin-top: 10px;font-size: 18px;">Here is the detailed information about the place</p>
+      <div class="row" >
+        <div class="col-sm-4">
+          <div class="datas" >
+            <div class="row" >
+              <div >
+                <img [src]="data.mainimg" alt="">
+              </div>
+              <div style="margin-top: 30px;">
+                
+                <div  class="data-details">
+                  <p><span class="badge bg-primary  text-dark" style="font-size: 24px;font-weight: 600S;">Details </span></p>
+                
+                    <p class="data-heading">{{data.name}}</p>
+                    <p class="data-info"><i class="fas fa-map-marked"></i>{{data.address}}</p>
+                    <p class="data-info"><i class="fas fa-phone-volume"></i>{{data.number}}</p>
+                    <p class="data-info"><i class="fas fa-chevron-right"></i>Available Now</p>
+                    <p class="data-info"><i class="fas fa-clock"></i>{{data.open}}- {{data.close}}</p>
+                     
+                    
+                </div>
+                <p><span class="badge bg-primary  text-dark" style="font-size: 24px;font-weight: 600S;">Features </span></p>
+                <div>
+                  <div *ngFor="let feature of data.features" class="col-md-6 col-sm-6 col-lg-6">
+                    <span class="badge bg-light text-dark" style="font-size: 18px;font-weight: 600S;margin: 10px;">{{feature}} </span>
+                  </div>
+                </div>
+                
+                <p><span class="badge bg-primary  text-dark" style="font-size: 24px;font-weight: 600S;">Images </span></p>
+                     
+                <div class="data-images">
+                  <div *ngFor="let image of data.images">
+                    <img [src]="image" alt="">
+                  </div>
+                  
+                </div>
+
+                <div *ngIf= "data.booking" style="float: right;">
+                  <button  class="btn-register" [routerLink]="data.booking">Book Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8" *ngIf="apiLoaded | async">
+          <google-map [center]="position" [zoom]="zoom" height="600px" width="1030px">
+            <map-marker 
+            #markerElem
+            [position]="position"
+            [options]="markerOptions"
+            ></map-marker>
+          </google-map>
+        </div>
+      </div>
+    </section>
+  </div>
+   
+ </div>

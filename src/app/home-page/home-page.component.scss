@@ -1,0 +1,174 @@
+
+$color-bg: #000000;
+// $color-bg: #e6e4e4;
+$color-particle: #fff;
+$spacing: 2560px;
+$time-1: 60s;
+$time-2: 120s;
+$time-3: 180s;
+$time-4: 200s;
+
+/* mixins */
+@function particles($max) {
+  $val: 0px 0px $color-particle;
+  @for $i from 1 through $max {
+    $val: #{$val}, random($spacing)+px random($spacing)+px $color-particle;
+  }
+  @return $val;
+}
+
+@mixin particles($max) {
+  box-shadow: particles($max);
+  border-radius: 50%;
+}
+
+.page-bg, .animation-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.page-bg {
+  background: $color-bg;
+  background-blend-mode: screen;
+  background-size: cover;
+  filter: grayscale(100%);
+  // z-index: -1;
+}
+
+.particle, .particle:after {
+  background: transparent;
+}
+
+.particle:after {
+  position: absolute;
+  content: "";
+  top: $spacing;
+}
+
+.particle-1 {
+  animation: animParticle $time-1 linear infinite;
+  @include particles(1000);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-1:after {
+  @include particles(900);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2 {
+  animation: animParticle $time-2 linear infinite;
+  @include particles(800);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2:after {
+  @include particles(500);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-3:after {
+  @include particles(1100);
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+}
+
+.particle-4 {
+  animation: animParticle $time-4 linear infinite;
+  @include particles(1200);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-4:after {
+  @include particles(700);
+  height: 1px;
+  width: 1px;
+}
+
+@keyframes animParticle {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY($spacing * -1);
+  }
+}
+
+.page-wrapper {
+  text-align: center;
+  color: #fff;
+  z-index: 5;
+  .container1{
+    padding-top: 150px;
+    padding-bottom: 200px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Inconsolata', monospace;
+    text-align: center;
+    .app-heading{
+        font-size: 66px;
+        font-weight: 800;
+        color: white;
+    }
+    .app-description{
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+    .btn-register{
+        margin-top: 30px;
+        font-size: 24px;
+        height: 60px;
+        width: 230px;
+        border-radius: 30px;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+        font-weight: 700;
+        z-index: 10;
+      }
+      .btn-register:hover{
+         
+        font-weight: 800;
+        // color: black;
+        
+        border: 0.2px solid white;
+        animation: colorAnimation 1s ease-in-out;
+      }
+      @keyframes colorAnimation {
+        25% {
+          transform: rotate(7deg) translate(5px);
+        }
+        50% {
+          transform: rotate(-7deg) translate(-5px);
+        }
+        60% {
+          transform: rotate(6deg) translate(4px);
+        }
+        70% {
+          transform: rotate(-5deg) translate(-3px);
+        }
+        80% {
+          transform: rotate(4deg) translate(2px);
+        }
+        90% {
+          transform: rotate(-2deg) translate(-1px);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    }
+}
+
+
